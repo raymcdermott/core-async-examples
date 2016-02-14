@@ -1,36 +1,5 @@
 # core-async-examples
 
-FIXME: description
+This repo is code to support the blog post about event streams with core.async
 
-## Installation
-
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar core-async-examples-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+http://blog.opengrail.com/clojure/events/streams/2016/02/06/event-stream-intro.html
