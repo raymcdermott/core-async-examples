@@ -11,19 +11,17 @@
     out))
 
 (defn infinite-printer [data-ch]
-  (let []
-    (go-loop []
-             (if-let [data (<! data-ch)]
-               (do
-                 (clojure.pprint/pprint data)
-                 (recur))))))
+  (go-loop []
+    (if-let [data (<! data-ch)]
+      (do
+        (clojure.pprint/pprint data)
+        (recur)))))
 
 (defn finite-printer [termination-ch data-ch]
-  (let []
-    (go-loop []
-             (if-let [[data chan] (alts! [termination-ch data-ch])]
-               (condp = chan
-                 termination-ch (println data)              ; could check for val but, meh
-                 data-ch (do
-                           (clojure.pprint/pprint data)
-                           (recur)))))))
+  (go-loop []
+    (if-let [[data chan] (alts! [termination-ch data-ch])]
+      (condp = chan
+        termination-ch (println data)                       ; could check for val but, meh
+        data-ch (do
+                  (clojure.pprint/pprint data)
+                  (recur))))))
